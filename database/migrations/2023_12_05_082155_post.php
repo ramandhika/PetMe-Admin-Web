@@ -14,8 +14,10 @@ return new class extends Migration
         Schema::create('post', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->date('date');
-            $table->enum('status',['1','2']);
+            $table->date('upload_date');
+            $table->integer('status');
+            $table->string('breed');
+            $table->string('profile_picture');
             $table->integer('id_user')->unsigned();
             $table->integer('id_animal')->unsigned();
             $table->timestamps();
