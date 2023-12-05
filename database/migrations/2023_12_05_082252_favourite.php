@@ -16,7 +16,7 @@ return new class extends Migration
             $table->integer('id_user')->unsigned();
             $table->integer('id_post')->unsigned();
             $table->timestamps();
-            $table->foreign('id_user')->references('id')->on('users');
+            $table->foreign('id_user')->references('id')->on('user');
             $table->foreign('id_post')->references('id')->on('post');
         });
     }

@@ -19,8 +19,8 @@ return new class extends Migration
             $table->integer('id_user')->unsigned();
             $table->integer('id_animal')->unsigned();
             $table->timestamps();
-            $table->foreign('id_user')->references('id')->on('users');
-            $table->foreign('id_animal')->references('id')->on('animals');
+            $table->foreign('id_user')->references('id')->on('user');
+            $table->foreign('id_animal')->references('id')->on('animal');
         });
     }
 
