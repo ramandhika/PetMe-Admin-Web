@@ -2,10 +2,8 @@
 
 <!-- Content Area -->
 <div class="flex-1 h-screen p-10 pt-20">
-    <h1 class="text-pastel-custom text-5xl font-medium">Daftar User</h1>
-    <div class="flex justify-between mt-10">
-        <button class="font-bold bg-pastel-custom text-purple-custom rounded-xl p-2.5 px-4 hover:text-black">Tambah
-            User</button>
+    <h1 class="text-pastel-custom text-5xl font-medium">Daftar Approval</h1>
+    <div class="flex justify-end mt-10">
         <input type="text" id="liveSearchInput"
             class="w-1/4 border border-gray-300 rounded-md p-2.5 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
             placeholder="Search...">

@@ -5,3 +5,8 @@
 {{-- <link rel="icon" href="assets/img/favicon.ico"> --}}
 <title>PetMe Admin Dashboard</title>
 @vite('./resources/css/app.css')
+{{-- <style>
+    * {
+        border: 1px solid red;
+    }
+</style> --}}
