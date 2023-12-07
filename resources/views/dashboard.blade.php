@@ -8,8 +8,8 @@
             <div class="bg-pastel-custom text-purple-custom py-14 px-10 w-full rounded-xl flex items-center h-fit">
                 <i class="fas fa-users text-8xl"></i>
                 <div class="flex flex-col ms-5">
-                    <h1 class="text-4xl font-bold mb-2">Daftar User</h1>
-                    <h1 class="text-4xl font-bold">100</h1>
+                    <h1 class="text-3xl font-semibold mb-2">Daftar User</h1>
+                    <h1 class="text-7xl font-semibold">100</h1>
                 </div>
             </div>
         </div>
@@ -17,8 +17,8 @@
             <div class="text-pastel-custom bg-purple-custom py-14 px-10 w-full rounded-xl flex items-center">
                 <i class="fa-solid fa-bug text-8xl"></i>
                 <div class="flex flex-col ms-5">
-                    <h1 class="text-4xl font-bold mb-2">Aproval Pet</h1>
-                    <h1 class="text-4xl font-bold">100</h1>
+                    <h1 class="text-3xl font-semibold mb-2">Aproval Pet</h1>
+                    <h1 class="text-7xl font-semibold">100</h1>
                 </div>
             </div>
         </div>

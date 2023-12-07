@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    @extends('layout.head')
+    @include('layout.head')
 </head>
 
 <body class="h-screen flex justify-center items-center bg-pastel-background bg-cover bg-no-repeat bg-center shadow-xl">
@@ -18,7 +18,7 @@
                 <img src="./assets/img/logo.svg" alt="" class="me-8 h-full">
             </div>
 
-            <div class="flex flex-col justify-center  w-full h-5/6 mt-10">
+            <div class="flex flex-col justify-center w-full h-5/6 mt-10">
                 <form class="flex flex-col items-center">
                     <h1 class="mb-4 text-4xl font-bold text-center">Login</h1>
                     <p class="w-full mb-4 mt-4 text-center text-lg text-gray-400">Enter your username and password</p>
