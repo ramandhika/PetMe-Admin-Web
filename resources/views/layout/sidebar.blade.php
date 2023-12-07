@@ -1,7 +1,7 @@
 <body class="bg-gray-100 -z-20">
     <div class="w-full h-12 bg-purple-custom absolute -z-10 py-36"></div>
     <div class="flex z-50">
-        <div class="w-1/5 bg-white p-8 pt-14 pb-14 ml-20 mt-20 rounded-xl text-xl font-bold text-center">
+        <div class="w-1/5 bg-white p-8 pt-14 pb-14 ml-20 mt-20 rounded-t-3xl text-xl font-bold text-center shadow-xl">
             <!-- Logo -->
             <div class="mb-8 flex items-center justify-center">
                 <img src="assets/img/logo.svg" alt="Logo" class="w-3/4">
