@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Pet extends Model
 {
     use HasFactory;
-    protected $table = 'animal';
+    protected $table = 'post';
 }
