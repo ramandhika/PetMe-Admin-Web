@@ -9,7 +9,7 @@
                 <i class="fas fa-users text-8xl"></i>
                 <div class="flex flex-col ms-5">
                     <h1 class="text-3xl font-semibold mb-2">Daftar User</h1>
-                    <h1 class="text-7xl font-semibold">100</h1>
+                    <h1 class="text-7xl font-semibold">{{ $jumlahUser }}</h1>
                 </div>
             </div>
         </div>
@@ -18,7 +18,7 @@
                 <i class="fa-solid fa-bug text-8xl"></i>
                 <div class="flex flex-col ms-5">
                     <h1 class="text-3xl font-semibold mb-2">Aproval Pet</h1>
-                    <h1 class="text-7xl font-semibold">100</h1>
+                <h1 class="text-7xl font-semibold">{{ $jumlahPet }}</h1>
                 </div>
             </div>
         </div>

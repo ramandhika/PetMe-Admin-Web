@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\dashboardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
-});
+Route::get('/', [dashboardController::class, 'hitungJumlahData']);
 
 Route::get('/login', function () {
     return view('login');
