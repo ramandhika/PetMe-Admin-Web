@@ -16,58 +16,6 @@
                 <button class="bg-purple-custom text-pastel-custom p-3 font-semibold rounded-xl hover:bg-pastel-custom hover:text-purple-custom me-7">Import from Excel</button>
                 <button class="bg-pastel-custom text-purple-custom p-3 font-semibold rounded-xl hover:bg-purple-custom hover:text-pastel-custom px-7">Export to  PDF</button>
             </div>
-            <div class="mb-4 flex justify-between items-center">
-                <div class="flex space-x-2">
-                    <label for="search" class="sr-only">Search:</label>
-                    <input type="text" id="search" placeholder="Search..." class="p-2 border border-gray-300 rounded">
-                    <button class="p-2 bg-blue-500 text-white rounded">Search</button>
-                </div>
-                <div class="flex space-x-2">
-                    <label for="perPage" class="mr-2">Show:</label>
-                    <select id="perPage" class="p-2 border border-gray-300 rounded">
-                        <option>10</option>
-                        <option>25</option>
-                        <option>50</option>
-                    </select>
-                </div>
-            </div>
-
-            <table class="min-w-full bg-white border border-gray-300">
-                <thead>
-                    <tr>
-                        <th class="py-2 px-4 border-b">Nama</th>
-                        <th class="py-2 px-4 border-b">Username</th>
-                        <th class="py-2 px-4 border-b">Email</th>
-                        <th class="py-2 px-4 border-b">Password</th>
-                        <th class="py-2 px-4 border-b">Aksi</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Data rows go here -->
-                    <tr>
-                        <td class="py-2 px-4 border-b">John Doe</td>
-                        <td class="py-2 px-4 border-b">john_doe123</td>
-                        <td class="py-2 px-4 border-b">john.doe@example.com</td>
-                        <td class="py-2 px-4 border-b">********</td>
-                        <td class="py-2 px-4 border-b">
-                            <button class="bg-blue-500 text-white px-2 py-1 rounded">Edit</button>
-                            <button class="bg-red-500 text-white px-2 py-1 rounded">Delete</button>
-                        </td>
-                    </tr>
-                    <!-- More rows go here -->
-                </tbody>
-            </table>
-
-            <div class="mt-4 flex justify-between items-center">
-                <div class="text-sm text-gray-600">
-                    Showing 1 to 10 of 50 entries
-                </div>
-                <div class="flex space-x-2">
-                    <button class="p-2 bg-blue-500 text-white rounded">Previous</button>
-                    <button class="p-2 bg-blue-500 text-white rounded">Next</button>
-                </div>
-            </div>
         </div>
     </div>
 </div>
-
