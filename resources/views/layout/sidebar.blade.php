@@ -10,22 +10,22 @@
             <nav>
                 <ul>
                     <li class="mb-4">
-                        <a href="#" class="p-2.5 text-purple-custom hover:bg-pastel-custom hover:rounded-xl"><i
+                        <a href="/" class="p-2.5 text-purple-custom hover:bg-pastel-custom hover:rounded-xl"><i
                                 class="fa-solid fa-house-chimney-window"></i> Dashboard</a>
                     </li>
                     <li class="mb-4">
-                        <a href="#" class="p-2.5 text-purple-custom hover:bg-pastel-custom hover:rounded-xl"><i
+                        <a href="/user" class="p-2.5 text-purple-custom hover:bg-pastel-custom hover:rounded-xl"><i
                                 class="fas fa-users"></i> Daftar User</a>
                     </li>
                     <li class="mb-4">
-                        <a href="#" class="p-2.5 text-purple-custom hover:bg-pastel-custom hover:rounded-xl"><i
+                        <a href="/pet" class="p-2.5 text-purple-custom hover:bg-pastel-custom hover:rounded-xl"><i
                                 class="fa-solid fa-bug"></i> Approval Pet</a>
                     </li>
                 </ul>
             </nav>
             <!-- Logout -->
             <div class="mt-96">
-                <a href="#" class="p-2.5 text-red-700 hover:text-red-900 hover:bg-pastel-custom hover:rounded-xl"><i
+                <a href="/login" class="p-2.5 text-red-700 hover:text-red-900 hover:bg-pastel-custom hover:rounded-xl"><i
                         class="fa fa-sign-out-alt"></i> Logout</a>
             </div>
         </div>
