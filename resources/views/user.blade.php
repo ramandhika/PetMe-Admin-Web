@@ -12,6 +12,10 @@
     </div>
     <div class="flex w-full bg-white mt-5 pt-10 px-10 h-5/6 rounded-3xl">
         <div class="container mx-auto">
+            <div class="flex justify-end mb-5">
+                <button class="bg-purple-custom text-pastel-custom p-3 font-semibold rounded-xl hover:bg-pastel-custom hover:text-purple-custom me-7">Import from Excel</button>
+                <button class="bg-pastel-custom text-purple-custom p-3 font-semibold rounded-xl hover:bg-purple-custom hover:text-pastel-custom px-7">Export to  PDF</button>
+            </div>
             <div class="mb-4 flex justify-between items-center">
                 <div class="flex space-x-2">
                     <label for="search" class="sr-only">Search:</label>
