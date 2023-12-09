@@ -19,15 +19,26 @@
             </div>
 
             <div class="flex flex-col justify-center w-full h-5/6 mt-10">
-                <form class="flex flex-col items-center">
+                @if ($errors->any())
+                @foreach ($errors->all() as $error)
+                <div class="flex justify-center">
+                    <div class="bg-red-500 text-white text-center py-4 px-2 rounded-md -mt-16 mb-2 w-1/2">
+                        {{ $error }}
+                    </div>
+                </div>
+                @endforeach
+
+                @endif
+                <form class="flex flex-col items-center" action="" method="POST">
+                    @csrf
                     <h1 class="mb-4 text-4xl font-bold text-center">Login</h1>
                     <p class="w-full mb-4 mt-4 text-center text-lg text-gray-400">Enter your username and password</p>
                     <div class="mb-4 w-1/2">
                         <input type="text" id="username" name="username" class="w-full px-3 py-2 border rounded-md"
-                            placeholder="Username">
+                            placeholder="Username" value="{{ old('username') }}">
                     </div>
 
-                    <div class="mb-4 w-1/2" >
+                    <div class="mb-4 w-1/2">
                         <input type="password" id="password" name="password" class="w-full px-3 py-2 border rounded-md"
                             placeholder="Password">
                     </div>
@@ -37,7 +48,7 @@
                         <label for="remember" class="text-xl text-gray-400 pb-1">Remember me</label>
                     </div>
 
-                    <button type="submit"
+                    <button type="submit" name="submit"
                         class="w-full md:w-1/2 bg-purple-custom text-white mx-32 font-bold text-xl py-2 rounded-md">Login</button>
                 </form>
             </div>
