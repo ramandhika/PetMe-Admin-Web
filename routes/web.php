@@ -14,18 +14,14 @@ use App\Http\Controllers\dashboardController;
 |
 */
 Route::middleware(['guest'])->group(function () {
-    Route::get('/', [authController::class, 'index']);
-    Route::post('/', [authController::class, 'login']);
+    Route::get('/login', [authController::class, 'index'])->name('login');
+    Route::post('/login', [authController::class, 'login']);
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('dashboard', [dashboardController::class, 'hitungJumlahData']);
+    Route::get('/', [dashboardController::class, 'hitungJumlahData']);
+    Route::get('/logout', [authController::class, 'logout']);
 });
-
-
-
-Route::get('/logout', [authController::class, 'logout']);
-
 
 Route::get('/user', function () {
     return view('user');

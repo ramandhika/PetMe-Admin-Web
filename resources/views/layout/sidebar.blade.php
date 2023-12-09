@@ -25,7 +25,7 @@
             </nav>
             <!-- Logout -->
             <div class="mt-96">
-                <a href="/" class="p-2.5 text-red-700 hover:text-red-900 hover:bg-pastel-custom hover:rounded-xl"><i
+                <a href="logout" class="p-2.5 text-red-700 hover:text-red-900 hover:bg-pastel-custom hover:rounded-xl"><i
                         class="fa fa-sign-out-alt"></i> Logout</a>
             </div>
         </div>

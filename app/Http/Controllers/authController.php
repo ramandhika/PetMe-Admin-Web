@@ -27,10 +27,14 @@ class authController extends Controller
 
         // Proses Login
         if (Auth()->attempt($infoLogin) && Auth()->user()->role == 2) {
-            return redirect('dashboard');
+            return redirect('/');
         } else {
             return redirect()->back()->withErrors('Username atau password yang dimasukkan tidak sesuai')->withInput();
         }
+    }
 
+    function logout() {
+        Auth()->logout();
+        return redirect('/login');
     }
 }
