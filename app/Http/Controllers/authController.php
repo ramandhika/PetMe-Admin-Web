@@ -26,10 +26,15 @@ class authController extends Controller
         ];
 
         // Proses Login
-        if (Auth()->attempt($infoLogin) && Auth()->user()->role == 2) {
-            return redirect('/');
+        if (Auth()->attempt($infoLogin)) {
+            if (Auth()->user()->role == 2) {
+                return redirect('/');
+            } else {
+                Auth()->logout();
+                return redirect()->back()->withErrors('Tidak memiliki akses ke halaman ini.')->withInput();
+            }
         } else {
-            return redirect()->back()->withErrors('Username atau password yang dimasukkan tidak sesuai')->withInput();
+            return redirect()->back()->withErrors('Username atau password yang dimasukkan tidak sesuai.')->withInput();
         }
     }
 
