@@ -23,12 +23,7 @@ Route::middleware(['guest'])->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/', [dashboardController::class, 'hitungJumlahData']);
     Route::get('/logout', [authController::class, 'logout']);
-    // Route::get('/user', [userController::class, 'index']);
     Route::resource('/user', userController::class);
-});
-
-Route::get('/user/create', function () {
-    return view('/user/tambahUser');
 });
 
 Route::get('/pet', function () {

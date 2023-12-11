@@ -13,4 +13,10 @@ class userController extends Controller
 
         return view('user', compact('users'));
     }
+
+    public function create()
+    {
+        return view('user/tambahUser');
+    }
+
 }

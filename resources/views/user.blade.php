@@ -4,7 +4,7 @@
 <div class="flex-1 h-screen p-10 pt-20">
     <h1 class="text-pastel-custom text-5xl font-medium">Daftar User</h1>
     <div class="flex justify-between mt-10">
-        <a href="/user/create"
+        <a href="{{ route('user.create') }}"
             class="font-bold bg-pastel-custom text-purple-custom rounded-xl p-2.5 px-4 hover:text-black">Tambah
             User</a>
         <input type="text" id="liveSearchInput"
@@ -55,12 +55,15 @@
                         </td>
                         <td class="py-3 px-6">
                             <div class="flex item-center justify-center">
-                                <button
-                                    class="border border-blue-500 text-blue-500 px-4 py-2 rounded-md hover:bg-blue-500 hover:text-white"><i
-                                        class="fas fa-edit"></i> Edit</button>
-                                <button
-                                    class="border border-red-500 text-red-500 px-4 py-2 rounded-md ml-2 hover:bg-red-500 hover:text-white"><i
-                                        class="fas fa-trash"></i> Hapus</button>
+                                <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('user.destroy', $user->id) }}" method="POST">
+                                    <a href="{{ route('user.edit', $user->id) }}" class="border border-blue-500 text-blue-500 px-4 py-2 rounded-md hover:bg-blue-500 hover:text-white"><i
+                                        class="fas fa-edit"></i>Edit</a>
+                                    @csrf
+                                    @method('DELETE')
+                                    <button
+                                        class="border border-red-500 text-red-500 px-4 py-2 rounded-md ml-2 hover:bg-red-500 hover:text-white"><i
+                                            class="fas fa-trash"></i> Hapus</button>
+                                </form>
                             </div>
                         </td>
                     </tr>
@@ -80,6 +83,13 @@
 
 
 <script>
+    // Message with Toastr
+    @if(session()->has('success'))
+    toastr.success("{{ session('success') }}, 'Success!'");
+    @elseif(session()->has('error'))
+    toastr.error("{{ session('error') }}, 'Failed!'");
+    @endif
+
     // Live Search
     const liveSearchInput = document.getElementById("liveSearchInput");
     const tables = document.querySelectorAll("table");
@@ -113,12 +123,5 @@
             });
         });
     });
-
-    // Message with Toastr
-    @if(session()->has('success'))
-        toastr.success("{{ session('success') }}, 'Success!'");
-    @elseif(session()->has('error'))
-        toastr.error("{{ session('error') }}, 'Failed!'");
-    @endif
 </script>
 
