@@ -27,6 +27,11 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/user', userController::class);
 });
 
+Route::get('/user/create', function () {
+    return view('/user/tambahUser');
+});
+
 Route::get('/pet', function () {
     return view('pet');
 });
+

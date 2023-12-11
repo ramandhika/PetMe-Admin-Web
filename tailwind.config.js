@@ -15,7 +15,11 @@ export default {
                 "90r": "90rem",
             },
             height: {
+                "48r": "48rem",
                 "64r": "64rem",
+            },
+            margin: {
+                "23r": "23rem",
             },
             backgroundImage: {
                 "pastel-background": "url('/public/assets/img/background.png')",
