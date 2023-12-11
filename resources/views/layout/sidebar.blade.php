@@ -10,11 +10,11 @@
             <nav>
                 <ul>
                     <li class="mb-4">
-                        <a href="/" class="p-2.5 text-purple-custom hover:bg-pastel-custom hover:rounded-xl"><i
+                        <a href="{{ route('dashboard') }}" class="p-2.5 text-purple-custom hover:bg-pastel-custom hover:rounded-xl"><i
                                 class="fa-solid fa-house-chimney-window"></i> Dashboard</a>
                     </li>
                     <li class="mb-4">
-                        <a href="/user" class="p-2.5 text-purple-custom hover:bg-pastel-custom hover:rounded-xl"><i
+                        <a href="{{ route('user.index') }}" class="p-2.5 text-purple-custom hover:bg-pastel-custom hover:rounded-xl"><i
                                 class="fas fa-users"></i> Daftar User</a>
                     </li>
                     <li class="mb-4">

@@ -21,7 +21,7 @@ Route::middleware(['guest'])->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/', [dashboardController::class, 'hitungJumlahData']);
+    Route::get('/', [dashboardController::class, 'hitungJumlahData'])->name('dashboard');
     Route::get('/logout', [authController::class, 'logout']);
     Route::resource('/user', userController::class);
 });
