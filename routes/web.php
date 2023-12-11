@@ -3,6 +3,8 @@
 use App\Http\Controllers\authController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\dashboardController;
+use App\Http\Controllers\userController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,10 +23,8 @@ Route::middleware(['guest'])->group(function () {
 Route::middleware(['auth'])->group(function () {
     Route::get('/', [dashboardController::class, 'hitungJumlahData']);
     Route::get('/logout', [authController::class, 'logout']);
-});
-
-Route::get('/user', function () {
-    return view('user');
+    // Route::get('/user', [userController::class, 'index']);
+    Route::resource('/user', userController::class);
 });
 
 Route::get('/pet', function () {

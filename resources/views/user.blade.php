@@ -27,71 +27,45 @@
                         <th class="py-3 px-6">Nama</th>
                         <th class="py-3 px-6">Username</th>
                         <th class="py-3 px-6">Email</th>
-                        <th class="py-3 px-6">Password</th>
+                        <th class="py-3 px-6">Role</th>
                         <th class="py-3 px-6">Aksi</th>
                     </tr>
                 </thead>
                 <tbody class="text-gray-600 text-base font-medium text-center">
+                    @forelse ($users as $user)
                     <tr class="border-b-4 border-gray-200 hover:bg-gray-100">
                         <td class="py-3 px-6 whitespace-nowrap">
-                                <span class="font-medium">Andi</span>
+                                <span class="font-medium">{{ $user->name }}</span>
                         </td>
                         <td class="py-3 px-6">
-                                <span>Andi</span>
+                                <span>{{ $user->username }}</span>
                         </td>
                         <td class="py-3 px-6">
-                                <span>andi@gmail.com</span>
+                                <span>{{ $user->email }}</span>
                         </td>
                         <td class="py-3 px-6">
-                            <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">Aktif</span>
+                            <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-base">
+                                @if ($user->role == 1)
+                                    User
+                                @else
+                                    {{ $user->role }}
+                                @endif
+                            </span>
                         </td>
                         <td class="py-3 px-6">
                             <div class="flex item-center justify-center">
-                                <button class="bg-blue-500 text-white px-4 py-2 rounded-md"><i class="fas fa-edit"></i> Edit</button>
-                                <button class="bg-red-500 text-white px-4 py-2 rounded-md ml-2"><i class="fas fa-trash"></i> Hapus</button>
+                                <button class="border border-blue-500 text-blue-500 px-4 py-2 rounded-md hover:bg-blue-500 hover:text-white"><i class="fas fa-edit"></i> Edit</button>
+                                <button class="border border-red-500 text-red-500 px-4 py-2 rounded-md ml-2 hover:bg-red-500 hover:text-white"><i class="fas fa-trash"></i> Hapus</button>
                             </div>
                         </td>
                     </tr>
-                    <tr class="border-b-4 border-gray-200 hover:bg-gray-100">
-                        <td class="py-3 px-6 whitespace-nowrap">
-                                <span class="font-medium">Andi</span>
-                        </td>
-                        <td class="py-3 px-6">
-                                <span>Andi</span>
-                        </td>
-                        <td class="py-3 px-6">
-                                <span>andi@gmail.com</span>
-                        </td>
-                        <td class="py-3 px-6">
-                            <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">Aktif</span>
-                        </td>
-                        <td class="py-3 px-6">
-                            <div class="flex item-center justify-center">
-                                <button class="bg-blue-500 text-white px-4 py-2 rounded-md"><i class="fas fa-edit"></i> Edit</button>
-                                <button class="bg-red-500 text-white px-4 py-2 rounded-md ml-2"><i class="fas fa-trash"></i> Hapus</button>
-                            </div>
+                    @empty
+                    <tr>
+                        <td colspan="5" class="py-3 px-6 text-center border-4 border-red-500 text-red-500">
+                            <span class="font-bold text-xl">Tidak ada data</span>
                         </td>
                     </tr>
-                    <tr class="border-b-4 border-gray-200 hover:bg-gray-100">
-                        <td class="py-3 px-6 whitespace-nowrap">
-                                <span class="font-medium">Andi</span>
-                        </td>
-                        <td class="py-3 px-6">
-                                <span>Andi</span>
-                        </td>
-                        <td class="py-3 px-6">
-                                <span>andi@gmail.com</span>
-                        </td>
-                        <td class="py-3 px-6">
-                            <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-xs">Aktif</span>
-                        </td>
-                        <td class="py-3 px-6">
-                            <div class="flex item-center justify-center">
-                                <button class="bg-blue-500 text-white px-4 py-2 rounded-md"><i class="fas fa-edit"></i> Edit</button>
-                                <button class="bg-red-500 text-white px-4 py-2 rounded-md ml-2"><i class="fas fa-trash"></i> Hapus</button>
-                            </div>
-                        </td>
-                    </tr>
+                    @endforelse
                 </tbody>
             </table>
         </div>
