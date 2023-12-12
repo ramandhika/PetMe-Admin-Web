@@ -20,6 +20,7 @@ class UserSeederTest extends Seeder
                 'email' => 'admin@gmail.com',
                 'password' => Hash::make('admin'),
                 'name' => 'admin',
+                'phone' => '081234567890',
                 'role' => '2',
             ],
             [
@@ -27,6 +28,7 @@ class UserSeederTest extends Seeder
                 'email' => 'user@gmail.com',
                 'password' => Hash::make('user'),
                 'name' => 'user',
+                'phone' => '081234567890',
                 'role' => '1',
             ],
         ];

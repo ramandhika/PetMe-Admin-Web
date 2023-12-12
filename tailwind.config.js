@@ -16,6 +16,7 @@ export default {
             },
             height: {
                 "48r": "48rem",
+                "50r": "50rem",
                 "64r": "64rem",
             },
             margin: {

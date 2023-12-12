@@ -55,9 +55,11 @@
                         </td>
                         <td class="py-3 px-6">
                             <div class="flex item-center justify-center">
-                                <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('user.destroy', $user->id) }}" method="POST">
-                                    <a href="{{ route('user.edit', $user->id) }}" class="border border-blue-500 text-blue-500 px-4 py-2 rounded-md hover:bg-blue-500 hover:text-white"><i
-                                        class="fas fa-edit"></i>Edit</a>
+                                <form onsubmit="return confirm('Apakah Anda Yakin ?');"
+                                    action="{{ route('user.destroy', $user->id) }}" method="POST">
+                                    <a href="{{ route('user.edit', $user->id) }}"
+                                        class="border border-blue-500 text-blue-500 px-4 py-2 rounded-md hover:bg-blue-500 hover:text-white"><i
+                                            class="fas fa-edit"></i>Edit</a>
                                     @csrf
                                     @method('DELETE')
                                     <button
@@ -81,15 +83,7 @@
     </div>
 </div>
 
-
 <script>
-    // Message with Toastr
-    @if(session()->has('success'))
-    toastr.success("{{ session('success') }}, 'Success!'");
-    @elseif(session()->has('error'))
-    toastr.error("{{ session('error') }}, 'Failed!'");
-    @endif
-
     // Live Search
     const liveSearchInput = document.getElementById("liveSearchInput");
     const tables = document.querySelectorAll("table");
@@ -123,5 +117,5 @@
             });
         });
     });
-</script>
 
+</script>
