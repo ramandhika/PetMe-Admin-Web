@@ -9,4 +9,11 @@ class Pet extends Model
 {
     use HasFactory;
     protected $table = 'post';
+    protected $fillable = [
+        'id',
+        'title',
+        'upload_date',
+        'status',
+        'breed',
+    ];
 }

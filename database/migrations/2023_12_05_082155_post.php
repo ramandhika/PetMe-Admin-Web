@@ -17,7 +17,7 @@ return new class extends Migration
             $table->date('upload_date');
             $table->integer('status')->default(1);
             $table->string('breed');
-            $table->string('profile_picture')->nullable();
+            $table->string('post_picture')->nullable();
             $table->integer('id_user')->unsigned();
             $table->integer('id_animal')->unsigned();
             $table->timestamps();

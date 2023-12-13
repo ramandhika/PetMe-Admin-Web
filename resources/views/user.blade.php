@@ -21,7 +21,26 @@
                     class="bg-pastel-custom text-purple-custom p-3 font-semibold rounded-xl hover:bg-purple-custom hover:text-pastel-custom px-7">Export
                     to PDF</button>
             </div>
-
+            @if (session('success'))
+            <div id="successMessage" class="bg-green-500 p-3 rounded-md shadow-sm mb-5">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <svg class="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd"
+                                d="M2.293 8.293a1 1 0 010-1.414l6-6a1 1 0 011.414
+                                0l6 6a1 1 0 01-1.414 1.414L11 4.414V16a1 1
+                                0 01-2 0V4.414L3.707 8.707a1 1 0 01-1.414
+                                0z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <p class="text-sm leading-5 font-medium text-white">
+                            {{ session('success') }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            @endif
             <table class="table-auto border-collapse w-full">
                 <thead>
                     <tr class="capitalize text-base leading-normal border-b-4 text-center">
@@ -118,4 +137,14 @@
         });
     });
 
+    // Notification Success
+    setTimeout(function() {
+        var successMessage = document.getElementById('successMessage');
+        successMessage.style.opacity = '0';
+        successMessage.style.transition = 'opacity 0.5s ease-in-out';
+
+        setTimeout(function() {
+            successMessage.style.display = 'none';
+        }, 500);
+    }, 5000);
 </script>

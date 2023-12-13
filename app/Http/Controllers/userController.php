@@ -38,7 +38,7 @@ class userController extends Controller
             'password' => $request->password,
         ]);
 
-        return redirect()->route('user.index')->with(['success', 'User berhasil ditambahkan'])->withInput();
+        return redirect()->route('user.index')->with('success', 'User berhasil ditambahkan')->withInput();
     }
 
     public function edit($id)
@@ -68,7 +68,7 @@ class userController extends Controller
             'password' => $request->password,
         ]);
 
-        return redirect()->route('user.index')->with(['success', 'User berhasil diupdate'])->withInput();
+        return redirect()->route('user.index')->with('success', 'User berhasil diupdate');
     }
 
     public function destroy($id): RedirectResponse
@@ -76,6 +76,6 @@ class userController extends Controller
         $user = User::findOrFail($id);
         $user->delete();
 
-        return redirect()->route('user.index')->with(['success', 'User berhasil dihapus'])->withInput();
+        return redirect()->route('user.index')->with('success', 'User berhasil dihapus');
     }
 }

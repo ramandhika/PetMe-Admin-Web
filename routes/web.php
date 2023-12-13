@@ -4,6 +4,7 @@ use App\Http\Controllers\authController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\dashboardController;
 use App\Http\Controllers\userController;
+use App\Http\Controllers\petController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,9 +25,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/', [dashboardController::class, 'hitungJumlahData'])->name('dashboard');
     Route::get('/logout', [authController::class, 'logout']);
     Route::resource('/user', userController::class);
-});
-
-Route::get('/pet', function () {
-    return view('pet');
+    Route::get('/pet', [petController::class, 'index'])->name('pet.index');
+    Route::patch('/pet{id}', [petController::class, 'update'])->name('pet.update');
+    Route::delete('/pet{id}', [petController::class, 'destroy'])->name('pet.destroy');
 });
 
