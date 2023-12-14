@@ -18,6 +18,9 @@ return new class extends Migration
             $table->integer('status')->default(1);
             $table->string('breed');
             $table->string('post_picture')->nullable();
+            $table->text('description');
+            $table->float('latitude');
+            $table->float('longitude');
             $table->integer('id_user')->unsigned();
             $table->integer('id_animal')->unsigned();
             $table->timestamps();
