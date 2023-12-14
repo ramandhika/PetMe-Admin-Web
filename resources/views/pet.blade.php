@@ -51,7 +51,7 @@
                 <form action="{{ route('pet.update', $post->id) }}" method="POST">
                     @csrf
                     @method('PATCH')
-                    <tbody class="text-gray-600 text-base font-normal">
+                    <tbody class="text-gray-600 text-base font-medium">
                         <tr class="border-b-4 text-center border-gray-200 hover:bg-gray-100">
                             <td class="py-3 px-1 whitespace-nowrap text-left">
                                 <span class="font-normal"><?=$id?></span>

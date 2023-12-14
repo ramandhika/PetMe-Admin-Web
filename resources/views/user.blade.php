@@ -11,7 +11,7 @@
             class="w-1/4 border border-gray-300 rounded-md p-2.5 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
             placeholder="Search...">
     </div>
-    <div class="flex w-full bg-white mt-5 pt-10 px-10 h-5/6 rounded-3xl">
+    <div class="flex w-full bg-white mt-5 pt-10 px-10 h-95 rounded-3xl">
         <div class="container mx-auto">
             <div class="flex justify-end mb-7">
                 <button

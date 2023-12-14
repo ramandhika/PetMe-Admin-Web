@@ -18,6 +18,7 @@ export default {
                 "48r": "48rem",
                 "50r": "50rem",
                 "64r": "64rem",
+                95: "95%",
             },
             margin: {
                 "23r": "23rem",
