@@ -23,7 +23,6 @@ return new class extends Migration
             $table->float('longitude');
             $table->integer('id_user')->unsigned();
             $table->integer('id_animal')->unsigned();
-            $table->timestamps();
             $table->foreign('id_user')->references('id')->on('user');
             $table->foreign('id_animal')->references('id')->on('animal');
         });

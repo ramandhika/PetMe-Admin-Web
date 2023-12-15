@@ -26,7 +26,7 @@ class userController extends Controller
             'name' => 'required|min:3|max:50',
             'username' => 'required|min:3|max:10|unique:user,username',
             'email' => 'required|email|unique:user,email',
-            'phone' => 'numeric|digits_between:10,13',
+            'phone' => 'nullable|numeric|digits_between:10,13',
             'password' => 'required|min:3|max:15',
         ]);
 
@@ -36,6 +36,7 @@ class userController extends Controller
             'email' => $request->email,
             'phone' => $request->phone ?? null,
             'password' => $request->password,
+            'profile_picture' => 'https://storage.googleapis.com/petmebucket/user_data/paws.png', // Added column with default value
         ]);
 
         return redirect()->route('user.index')->with('success', 'User berhasil ditambahkan')->withInput();
@@ -56,7 +57,7 @@ class userController extends Controller
             'name' => 'required|min:3|max:50',
             'username' => 'required|min:3|max:10|unique:user,username,' . $user->id,
             'email' => 'required|email|unique:user,email,' . $user->id,
-            'phone' => 'numeric|digits_between:10,13',
+            'phone' => 'nullable|numeric|digits_between:10,13',
             'password' => 'required|min:3|max:15',
         ]);
 

@@ -41,9 +41,11 @@
                 </div>
             </div>
             @endif
+            <?php $id = 1?>
             <table class="table-auto border-collapse w-full">
                 <thead>
                     <tr class="capitalize text-base leading-normal border-b-4 text-center">
+                        <th class="py-3 px-1 text-left">#</th>
                         <th class="py-3 px-1 text-left">Nama</th>
                         <th class="py-3 px-6 text-left">Username</th>
                         <th class="py-3 px-6">Email</th>
@@ -54,16 +56,19 @@
                 <tbody class="text-gray-600 text-base font-medium">
                     @forelse ($users as $user)
                     <tr class="border-b-4 text-center border-gray-200 hover:bg-gray-100">
-                        <td class="py-3 px-1 whitespace-nowrap text-left">
+                        <td class="py-1.5 px-1 whitespace-nowrap text-left">
+                            <span class="font-normal"><?=$id++?></span>
+                        </td>
+                        <td class="py-1.5 px-1 whitespace-nowrap text-left">
                             <span class="font-medium">{{ $user->name }}</span>
                         </td>
-                        <td class="py-3 px-6 text-left">
+                        <td class="py-1.5 px-6 text-left">
                             <span>{{ $user->username }}</span>
                         </td>
-                        <td class="py-3 px-6">
+                        <td class="py-1.5 px-6">
                             <span>{{ $user->email }}</span>
                         </td>
-                        <td class="py-3 px-6">
+                        <td class="py-1.5 px-6">
                             <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-base">
                                 @if ($user->role == 1)
                                 User
@@ -72,7 +77,7 @@
                                 @endif
                             </span>
                         </td>
-                        <td class="py-3 px-6">
+                        <td class="py-1.5 px-6">
                             <div class="flex item-center justify-center">
                                 <form onsubmit="return confirm('Apakah Anda Yakin ?');"
                                     action="{{ route('user.destroy', $user->id) }}" method="POST">

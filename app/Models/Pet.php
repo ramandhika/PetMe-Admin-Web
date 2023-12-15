@@ -16,4 +16,5 @@ class Pet extends Model
         'status',
         'breed',
     ];
+    public $timestamps = false;
 }
