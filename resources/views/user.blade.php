@@ -5,10 +5,10 @@
     <div class="flex justify-between">
     <h1 class="text-pastel-custom text-5xl font-medium w-1/2">Daftar User</h1>
     @if (session('success'))
-    <div id="successMessage" class="bg-green-500 p-3 rounded-md shadow-sm mb-5 w-1/4">
+    <div id="successMessage" class="bg-green-200 p-3 rounded-md shadow-sm mb-5 w-1/4">
         <div class="flex">
             <div class="flex-shrink-0">
-                <svg class="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                <svg class="h-5 w-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd"
                         d="M2.293 8.293a1 1 0 010-1.414l6-6a1 1 0 011.414
                         0l6 6a1 1 0 01-1.414 1.414L11 4.414V16a1 1
@@ -17,7 +17,7 @@
                 </svg>
             </div>
             <div class="ml-3">
-                <p class="text-sm leading-5 font-medium text-white">
+                <p class="text-sm leading-5 font-medium text-green-500">
                     {{ session('success') }}
                 </p>
             </div>
@@ -83,12 +83,12 @@
                                 <form onsubmit="return confirm('Apakah Anda Yakin ?');"
                                     action="{{ route('user.destroy', $user->id) }}" method="POST">
                                     <a href="{{ route('user.edit', $user->id) }}"
-                                        class="border border-blue-500 text-blue-500 px-4 py-2 rounded-md hover:bg-blue-500 hover:text-white"><i
+                                        class="border border-blue-500 text-blue-500 px-3.5 py-0.5 rounded-md hover:bg-blue-500 hover:text-white"><i
                                             class="fas fa-edit"></i>Edit</a>
                                     @csrf
                                     @method('DELETE')
                                     <button
-                                        class="border border-red-500 text-red-500 px-4 py-2 rounded-md ml-2 hover:bg-red-500 hover:text-white"><i
+                                        class="border border-red-500 text-red-500 px-3.5 py-0.5 rounded-md ml-2 hover:bg-red-500 hover:text-white"><i
                                             class="fas fa-trash"></i> Hapus</button>
                                 </form>
                             </div>
