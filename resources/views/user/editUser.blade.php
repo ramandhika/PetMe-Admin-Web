@@ -55,7 +55,7 @@
                     <label for="password" class="text-xl font-semibold">Password</label>
                     <input type="password" name="password" id="password"
                         class="@error('password') is-invalid @enderror border border-gray-300 rounded-md p-2.5 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
-                        placeholder="Password">
+                        placeholder="Password" value="{{ old('password', $user->password) }}">
                     <i class="text-sm text-gray-500">*Masukkan Kata Sandi Baru <br> Minimum 3 Character, Maximum 15 Character</i>
                 </div>
                 <div class="flex justify-end mt-5">

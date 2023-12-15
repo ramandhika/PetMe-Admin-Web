@@ -2,7 +2,29 @@
 
 <!-- Content Area -->
 <div class="flex-1 h-screen p-10 pt-20">
-    <h1 class="text-pastel-custom text-5xl font-medium">Daftar User</h1>
+    <div class="flex justify-between">
+    <h1 class="text-pastel-custom text-5xl font-medium w-1/2">Daftar User</h1>
+    @if (session('success'))
+    <div id="successMessage" class="bg-green-500 p-3 rounded-md shadow-sm mb-5 w-1/4">
+        <div class="flex">
+            <div class="flex-shrink-0">
+                <svg class="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd"
+                        d="M2.293 8.293a1 1 0 010-1.414l6-6a1 1 0 011.414
+                        0l6 6a1 1 0 01-1.414 1.414L11 4.414V16a1 1
+                        0 01-2 0V4.414L3.707 8.707a1 1 0 01-1.414
+                        0z" clip-rule="evenodd" />
+                </svg>
+            </div>
+            <div class="ml-3">
+                <p class="text-sm leading-5 font-medium text-white">
+                    {{ session('success') }}
+                </p>
+            </div>
+        </div>
+    </div>
+    @endif
+    </div>
     <div class="flex justify-between mt-10">
         <a href="{{ route('user.create') }}"
             class="font-bold bg-pastel-custom text-purple-custom rounded-xl p-2.5 px-4 hover:text-black">Tambah
@@ -21,28 +43,7 @@
                     class="bg-pastel-custom text-purple-custom p-3 font-semibold rounded-xl hover:bg-purple-custom hover:text-pastel-custom px-7">Export
                     to PDF</button>
             </div>
-            @if (session('success'))
-            <div id="successMessage" class="bg-green-500 p-3 rounded-md shadow-sm mb-5">
-                <div class="flex">
-                    <div class="flex-shrink-0">
-                        <svg class="h-5 w-5 text-white" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd"
-                                d="M2.293 8.293a1 1 0 010-1.414l6-6a1 1 0 011.414
-                                0l6 6a1 1 0 01-1.414 1.414L11 4.414V16a1 1
-                                0 01-2 0V4.414L3.707 8.707a1 1 0 01-1.414
-                                0z" clip-rule="evenodd" />
-                        </svg>
-                    </div>
-                    <div class="ml-3">
-                        <p class="text-sm leading-5 font-medium text-white">
-                            {{ session('success') }}
-                        </p>
-                    </div>
-                </div>
-            </div>
-            @endif
-            <?php $id = 1?>
-            <table class="table-auto border-collapse w-full">
+            <table class="table-auto border-collapse w-full mb-3">
                 <thead>
                     <tr class="capitalize text-base leading-normal border-b-4 text-center">
                         <th class="py-3 px-1 text-left">#</th>
@@ -54,10 +55,10 @@
                     </tr>
                 </thead>
                 <tbody class="text-gray-600 text-base font-medium">
-                    @forelse ($users as $user)
+                    @forelse ($users as $index => $user)
                     <tr class="border-b-4 text-center border-gray-200 hover:bg-gray-100">
                         <td class="py-1.5 px-1 whitespace-nowrap text-left">
-                            <span class="font-normal"><?=$id++?></span>
+                            <span class="font-normal">{{ $index + $users->firstItem() }}</span>
                         </td>
                         <td class="py-1.5 px-1 whitespace-nowrap text-left">
                             <span class="font-medium">{{ $user->name }}</span>
@@ -113,34 +114,39 @@
     const tables = document.querySelectorAll("table");
 
     liveSearchInput.addEventListener("keyup", function (e) {
-        const searchString = e.target.value.toLowerCase();
+    const searchString = e.target.value.toLowerCase();
 
-        tables.forEach((table) => {
-            const tableRows = table.querySelectorAll("tbody tr");
+    tables.forEach((table) => {
+        const tableRows = table.querySelectorAll("tbody tr");
 
-            tableRows.forEach((row) => {
-                const nama = row
-                    .querySelector("td:nth-child(1)")
-                    .textContent.toLowerCase();
-                const username = row
-                    .querySelector("td:nth-child(2)")
-                    .textContent.toLowerCase();
-                const email = row
-                    .querySelector("td:nth-child(3)")
-                    .textContent.toLowerCase();
+        tableRows.forEach((row) => {
+            const nama = row
+                .querySelector("td:nth-child(1)")
+                .textContent.toLowerCase();
+            const username = row
+                .querySelector("td:nth-child(2)")
+                .textContent.toLowerCase();
+            const email = row
+                .querySelector("td:nth-child(3)")
+                .textContent.toLowerCase();
 
-                if (
-                    nama.includes(searchString) ||
-                    username.includes(searchString) ||
-                    email.includes(searchString)
-                ) {
-                    row.style.display = "";
-                } else {
-                    row.style.display = "none";
-                }
-            });
+            const tds = row.querySelectorAll("td");
+            if (
+                nama.includes(searchString) ||
+                username.includes(searchString) ||
+                email.includes(searchString)
+            ) {
+                tds.forEach((td) => {
+                    td.style.display = "";
+                });
+            } else {
+                tds.forEach((td) => {
+                    td.style.display = "none";
+                });
+            }
         });
     });
+});
 
     // Notification Success
     setTimeout(function() {
