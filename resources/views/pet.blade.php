@@ -63,9 +63,9 @@
                             </td>
                             <td class="py-3 px-6">
                                 @if ($post->type === 'cat')
-                                    <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-base">Cat</span>
+                                    <span class="bg-pastel-custom text-amber-500 py-1 px-3 rounded-full text-base">Cat</span>
                                 @elseif ($post->type === 'dog')
-                                    <span class="bg-green-200 text-green-600 py-1 px-3 rounded-full text-base">Dog</span>
+                                    <span class="bg-purple-200 text-purple-custom py-1 px-3 rounded-full text-base">Dog</span>
                                 @else
                                     <span>{{ $post->type }}</span>
                                 @endif
@@ -81,10 +81,12 @@
                             </td>
                             <td class="py-3 px-6">
                                 <div class="flex item-center justify-center">
-                                    <button type="submit" class="border border-blue-500 text-blue-500 px-3.5 py-0.5 rounded-md hover:bg-blue-500 hover:text-white"><i
-                                        class="fas fa-edit"></i></button>
+                                    <a href="{{ route('pet.update', $post->id) }}" class="border border-blue-500 text-blue-500 px-3.5 py-0.5 rounded-md hover:bg-blue-500 hover:text-white"><i
+                                        class="fas fa-edit"></i></a>
                                     <a href="{{ route('pet.index', $post->id) }}" class="border border-blue-500 text-blue-500 px-3.5 py-0.5 rounded-md ml-1 hover:bg-blue-500 hover:text-white">
                                         <i class="fas fa-eye"></i></a>
+                                    <button type="submit" class="border border-red-500 text-red-500 px-3.5 py-0.5 rounded-md ml-1 hover:bg-red-500 hover:text-white"><i
+                                        class="fas fa-trash"></i></button>
                                 </div>
                             </td>
                         </tr>
