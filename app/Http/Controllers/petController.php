@@ -17,7 +17,7 @@ class petController extends Controller
             ->select('post.id', 'post.title', 'post.upload_date', 'post.status', 'post.breed', 'post.post_picture', 'user.name', 'animal.type')
             ->orderBy('post.upload_date', 'desc')
             // ->where('post.status', '!=', '2') // 2 = Accepted
-            ->paginate(7);
+            ->paginate(10);
 
         return view('pet', ['posts' => $post]);
     }

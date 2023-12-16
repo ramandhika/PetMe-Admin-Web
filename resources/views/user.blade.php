@@ -33,9 +33,9 @@
             class="w-1/4 border border-gray-300 rounded-md p-2.5 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
             placeholder="Search...">
     </div>
-    <div class="flex w-full bg-white mt-5 pt-10 px-10 h-95 rounded-3xl">
+    <div class="flex w-full bg-white mt-5 px-10 h-95 rounded-3xl">
         <div class="container mx-auto">
-            <div class="flex justify-end mb-7">
+            <div class="flex justify-end mb-5 pt-5">
                 <button
                     class="bg-purple-custom text-pastel-custom p-3 font-semibold rounded-xl hover:bg-pastel-custom hover:text-purple-custom me-7">Import
                     from Excel</button>

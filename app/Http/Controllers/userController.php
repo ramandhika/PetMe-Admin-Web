@@ -10,7 +10,7 @@ class userController extends Controller
 {
     public function index()
     {
-        $users = User::where('role', 1)->latest()->paginate(7);
+        $users = User::where('role', 1)->latest()->paginate(10);
 
         return view('user', compact('users'));
     }

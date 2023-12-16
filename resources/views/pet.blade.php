@@ -30,9 +30,9 @@
             class="w-1/4 border border-gray-300 rounded-md p-2.5 focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent"
             placeholder="Search...">
     </div>
-    <div class="flex w-full bg-white mt-5 pt-10 px-10 h-95 rounded-3xl">
+    <div class="flex w-full bg-white mt-5 px-10 h-95 rounded-3xl">
         <div class="container mx-auto">
-            <div class="flex justify-end mb-5">
+            <div class="flex justify-end mb-5 pt-5">
                 <a href="{{ route('pet.index') }}" class="px-4 py-2 mx-2 bg-pastel-custom text-purple-custom rounded-xl hover:bg-purple-custom hover:text-pastel-custom font-semibold text-xl">All</a>
                 <a href="{{ route('pet.index', ['type' => 'cat']) }}" class="px-4 py-2 mx-2 bg-pastel-custom text-purple-custom rounded-xl hover:bg-purple-custom hover:text-pastel-custom font-semibold text-xl">Cats</a>
                 <a href="{{ route('pet.index', ['type' => 'dog']) }}" class="px-4 py-2 mx-2 bg-pastel-custom text-purple-custom rounded-xl hover:bg-purple-custom hover:text-pastel-custom font-semibold text-xl">Dogs</a>
@@ -51,17 +51,15 @@
                 <?php $id = $posts->firstItem(); ?>
                 @foreach ($posts as $post)
                 <form action="{{ route('pet.update', $post->id) }}" method="POST">
-                    @csrf
-                    @method('PATCH')
                     <tbody class="text-gray-600 text-base font-medium">
                         <tr class="border-b-4 text-center border-gray-200 hover:bg-gray-100">
-                            <td class="py-3 px-1 whitespace-nowrap text-left">
+                            <td class="py-1.5 px-1 whitespace-nowrap text-left">
                                 <span class="font-normal">{{ $id }}</span>
                             </td>
-                            <td class="py-3 px-6 text-left">
+                            <td class="py-1.5 px-6 text-left">
                                 <span>{{ $post->title }}</span>
                             </td>
-                            <td class="py-3 px-6">
+                            <td class="py-1.5 px-6">
                                 @if ($post->type === 'cat')
                                     <span class="bg-pastel-custom text-amber-500 py-1 px-3 rounded-full text-base">Cat</span>
                                 @elseif ($post->type === 'dog')
@@ -70,30 +68,41 @@
                                     <span>{{ $post->type }}</span>
                                 @endif
                             </td>
-                            <td class="py-3 px-6">
+                            <td class="py-1.5 px-6">
                                 <span>{{ $post->breed }}</span>
                             </td>
-                            <td class="py-3 px-2">
+                            <td class="py-1.5 px-2">
                                 <select name="status" id="status" class="rounded-xl py-1 px-2 focus:outline-none font-bold bg-pastel-custom text-purple-custom">
                                     <option value="1" {{ $post->status == 1 ? 'selected' : '' }}>Not approved</option>
                                     <option value="2" {{ $post->status == 2 ? 'selected' : '' }}>Approved</option>
                                 </select>
                             </td>
-                            <td class="py-3 px-6">
+                            <td class="py-1.5 px-6">
                                 <div class="flex item-center justify-center">
-                                    <a href="{{ route('pet.update', $post->id) }}" class="border border-blue-500 text-blue-500 px-3.5 py-0.5 rounded-md hover:bg-blue-500 hover:text-white"><i
-                                        class="fas fa-edit"></i></a>
+                                    <form method="POST" action="{{ route('pet.update', $post->id) }}">
+                                        @csrf
+                                        @method('PATCH')
+                                        <button type="submit" class="border border-blue-500 text-blue-500 px-3.5 py-0.5 rounded-md hover:bg-blue-500 hover:text-white">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                    </form>
                                     <a href="{{ route('pet.index', $post->id) }}" class="border border-blue-500 text-blue-500 px-3.5 py-0.5 rounded-md ml-1 hover:bg-blue-500 hover:text-white">
-                                        <i class="fas fa-eye"></i></a>
-                                    <button type="submit" class="border border-red-500 text-red-500 px-3.5 py-0.5 rounded-md ml-1 hover:bg-red-500 hover:text-white"><i
-                                        class="fas fa-trash"></i></button>
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <form method="POST" action="{{ route('pet.destroy', $post->id) }}">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="border border-red-500 text-red-500 px-3.5 py-0.5 rounded-md ml-1 hover:bg-red-500 hover:text-white">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </form>
                                 </div>
                             </td>
                         </tr>
                         <?php $id++; ?>
                         @if ($posts->isEmpty())
                             <tr>
-                                <td colspan="5" class="py-3 px-6 text-center border-4 border-red-500 text-red-500">
+                                <td colspan="5" class="py-1.5 px-6 text-center border-4 border-red-500 text-red-500">
                                     <span class="font-bold text-xl">Tidak ada data</span>
                                 </td>
                             </tr>
