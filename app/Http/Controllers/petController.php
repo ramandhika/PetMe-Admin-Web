@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pet;
+use App\Models\Post;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -20,6 +21,22 @@ class petController extends Controller
             ->paginate(10);
 
         return view('pet', ['posts' => $post]);
+    }
+
+    function showDataById($id)
+    {
+        $post = DB::table('post')
+            ->join('user', 'post.id_user', '=', 'user.id')
+            ->join('animal', 'post.id_animal', '=', 'animal.id')
+            ->select('post.id', 'post.title', 'post.upload_date', 'post.status', 'post.breed', 'post.post_picture', 'post.description' , 'user.name', 'animal.type')
+            ->where('post.id', '=', $id)
+            ->first();
+
+        if (!$post) {
+            return redirect()->route('pet.index')->with('error', 'Post not found.');
+        }
+
+        return view('pet.show', ['post' => $post]);
     }
 
     function update(Request $request, $id)

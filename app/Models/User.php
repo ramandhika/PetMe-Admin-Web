@@ -47,6 +47,4 @@ class User extends Authenticatable
     ];
 
     protected $table = 'user';
-
-    // Ganti Nama Kolom Timestamp
 }

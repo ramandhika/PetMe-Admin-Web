@@ -87,7 +87,7 @@
                                             <i class="fas fa-edit"></i>
                                         </button>
                                     </form>
-                                    <a href="{{ route('pet.index', $post->id) }}" class="border border-blue-500 text-blue-500 px-3.5 py-0.5 rounded-md ml-1 hover:bg-blue-500 hover:text-white">
+                                    <a href="{{ route('pet.show', $post->id) }}" class="border border-blue-500 text-blue-500 px-3.5 py-0.5 rounded-md ml-1 hover:bg-blue-500 hover:text-white">
                                         <i class="fas fa-eye"></i>
                                     </a>
                                     <form id="deleteForm" method="POST" action="{{ route('pet.destroy', $post->id) }}">

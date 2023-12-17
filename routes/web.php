@@ -26,6 +26,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/logout', [authController::class, 'logout']);
     Route::resource('/user', userController::class);
     Route::get('/pet', [petController::class, 'index'])->name('pet.index');
+    Route::get('/pet{id}', [petController::class, 'showDataById'])->name('pet.show');
     Route::patch('/pet{id}', [petController::class, 'update'])->name('pet.update');
     Route::delete('/pet{id}', [petController::class, 'destroy'])->name('pet.destroy');
 });
