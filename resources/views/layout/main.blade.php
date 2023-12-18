@@ -3,7 +3,7 @@
 <head>
     @include('layout.head')
 </head>
-<body onload="zoom()">
+<body @if(Session::get('zoomed_out')) onload="zoom()" @endif>
     @include('layout.sidebar')
         @yield('content')
 </body>
