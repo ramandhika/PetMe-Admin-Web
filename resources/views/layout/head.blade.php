@@ -4,7 +4,8 @@
 <link rel="icon" href="{{ asset('assets/img/favicon.ico') }}">
 {{-- <link rel="icon" href="assets/img/favicon.ico"> --}}
 <title>PetMe Admin Dashboard</title>
-@vite('./resources/css/app.css')
+{{-- @vite('./resources/css/app.css') --}}
+<link href="{{ asset('build/assets/app.css') }}" rel="stylesheet">
 
 {{-- <style>
     * {
