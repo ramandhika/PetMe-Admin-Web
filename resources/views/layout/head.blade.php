@@ -4,8 +4,8 @@
 <link rel="icon" href="https://storage.googleapis.com/petmebucket/assets/favicon.ico">
 {{-- <link rel="icon" href="assets/img/favicon.ico"> --}}
 <title>PetMe Admin Dashboard</title>
-@vite('./resources/css/app.css')
-{{-- <link href="https://storage.googleapis.com/petmebucket/assets/app.css" rel="stylesheet"> --}}
+{{-- @vite('./resources/css/app.css') --}}
+<link href="https://storage.googleapis.com/petmebucket/assets/app.css" rel="stylesheet">
 
 {{-- <style>
     * {
